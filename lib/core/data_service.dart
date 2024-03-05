@@ -430,4 +430,11 @@ class DataService {
       return null;
     }
   }
+
+  List<Meal> getMealsByCategory(String categoryId) {
+    // Filter meals based on the given category ID
+    return dummyMeals
+        .where((meal) => meal.categories.contains(categoryId))
+        .toList();
+  }
 }
